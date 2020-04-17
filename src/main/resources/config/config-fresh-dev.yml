@@ -1,10 +1,4 @@
-server:
-  port: 7787
-
 spring:
-  application:
-    name: fresh-user-service
-    
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver

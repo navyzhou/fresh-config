@@ -1,10 +1,4 @@
-server:
-  port: 7788
-
 spring:
-  application:
-    name: fresh-view-service
-    
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
@@ -47,6 +41,18 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml 
   type-aliases-package: com.yc.fresh.entity
+
+
+
+server:
+  tomcat:
+    max-http-header-size: 8192
+    uri-encoding: UTF-8  
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6868/eureka
 
 uploadload:
   photoPath: pics
