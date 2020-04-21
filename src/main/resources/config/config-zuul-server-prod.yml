@@ -1,18 +1,13 @@
 server:
-  port: 9999
   tomcat: 
     max-threads: 128
     min-spare-threads: 64
-    
-spring:
-  application:
-    name: service-zuul
 
 eureka:
   client:
     instance:
       leaseRenewalIntervalInSeconds: 10
-      instance-id: fresh-zuul-server # 自定义服务名称信息
+      instance-id: config-zuul-server # 自定义服务名称信息
       prfer-ip-address: true # 访问路径可以显示IP地址
     registryFetchIntervalSeconds: 5
     serviceUrl:
@@ -33,12 +28,12 @@ zuul:
       path: /view/**
       # 这里一定要是你Eureka注册中心的服务的名称，所以这里配置serviceId因为跟eureka结合了，如果单独使用zuul,那么就必须写自己机器的IP了，
       # 如url:http://localhost:8080/  这样的不好就是写死IP了，万一这IP挂了，这高可用性，服务注册那套东西就用不起来了
-      serviceId: fresh-view-service
+      serviceId: config-view-service
       sensitiveHeaders: "*" 
     
     fresh-user:
       path: /user/**
-      serviceId: fresh-user-service
+      serviceId: config-user-service
       sensitiveHeaders: "*"
       
   ribbonIsolationStrategy: THREAD     
