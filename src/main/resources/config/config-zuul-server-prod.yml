@@ -33,7 +33,7 @@ zuul:
     
     fresh-user:
       path: /user/**
-      serviceId: config-user-view
+      serviceId: config-fresh-user
       sensitiveHeaders: "*"
       
   ribbonIsolationStrategy: THREAD     
